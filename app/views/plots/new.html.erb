@@ -1,0 +1,99 @@
+<h1>Your idea for the next Star Wars film</h1>
+
+<%= render "shared/errors" %>
+
+<%= simple_form_for :plot, url: plots_path do |f| %>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :title,
+        placeholder: t(".placholders.title"),
+        class: "form-control"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :category,
+        collection: Plot.categories.keys.sort,
+        prompt: t(".placholders.category"),
+        class: "form-control",
+        id: "category",
+        label: "Type of Plot"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :hero,
+        collection: CharactersService.call,
+        prompt: t(".placholders.hero"),
+        class: "form-control",
+        id: "hero"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :sidekick,
+        collection: CharactersService.call,
+        prompt: t(".placholders.sidekick"),
+        class: "form-control",
+        id: "sidekick"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :victim,
+        collection: CharactersService.call,
+        prompt: t(".placholders.victim"),
+        class: "form-control",
+        id: "victim"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :villain,
+        collection: CharactersService.call,
+        prompt: t(".placholders.villain"),
+        class: "form-control",
+        id: "villain"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :location,
+        collection: PlanetsService.call,
+        prompt: t(".placholders.location"),
+        class: "form-control",
+        id: "location",
+        label: "Planet"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :vehicle,
+        collection: VehiclesService.call,
+        prompt: t(".placholders.vehicle"),
+        class: "form-control",
+        id: "vehicle"
+      %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.input :starship,
+        collection: StarshipsService.call,
+        prompt: t(".placholders.starship"),
+        class: "form-control",
+        id: "starship"
+      %>
+    </div>
+  </div>
+  <div class="col-md-12 text-center">
+    <%= f.submit "Make it happen", class: "btn btn-default" %>
+  </div>
+<% end %>

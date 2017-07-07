@@ -1,0 +1,18 @@
+<div class="home-intro text-center">
+  <h1>A long time ago</h1>
+  <h2>in a galaxy far,</h2>
+  <h3>far away</h3>
+  <h4>George Lucas</h4>
+  <h5>filmed</h5>
+  <h4>Star Wars</h4>
+<br/>
+  <% @films.each do |film|  %>
+    <h5><%= film["title"] %></h5>
+  <% end %>
+<br/>
+  <%= button_to "Generate A New Storyline",
+    new_plot_path(),
+    class: "btn btn-default",
+    data: { disable_with: "Loading..." }
+  %>
+</div>

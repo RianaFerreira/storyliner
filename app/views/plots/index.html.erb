@@ -1,0 +1,20 @@
+<% if @resources.present? %>
+  <% @resources.each do |resource| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= resource.title %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <%= resource.story %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <%= button_to "Generate A New Storyline",
+    new_plot_path(),
+    class: "btn btn-default",
+    data: { disable_with: "Loading..." }
+  %>
+<% end %>
