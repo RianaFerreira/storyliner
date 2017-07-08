@@ -84,3 +84,4 @@ production:
   database: storyliner_production
   username: storyliner
   password: <%= ENV['STORYLINER_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

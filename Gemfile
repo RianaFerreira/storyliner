@@ -6,13 +6,22 @@ git_source(:github) do |repo_name|
 end
 
 ruby "2.4.1"
+
 gem "rails", "~> 5.1.2"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 0.18"
 
 # Use Puma as the app server
-gem "puma", "~> 3.7"
+gem "puma", "~> 3.7", group: :production
+
+# ENV management
+# needs to load before rails so that the Heroku ENVs can be initialized
+gem "dotenv-rails", groups: [:development, :test]
+
+# App deployments to Heroku no longer need this gem in Rails 5
+# Confirm config/environments/production.rb are configured for support
+# gem "rails_12factor"
 
 # ASSET MANAGEMENT
 # bootstrap the app styles and theme
@@ -42,12 +51,10 @@ gem "rack-offline", "~> 0.6.4"
 # wrapper for the star wars api
 gem "swapir"
 # enabled action cache for 3rd party requests
-gem 'actionpack-action_caching'
+gem "actionpack-action_caching"
 
 group :development, :test do
-  # ENV management
-  gem "dotenv-rails"
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call byebug anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.13"
