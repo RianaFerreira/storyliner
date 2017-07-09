@@ -1,6 +1,8 @@
-<h1>Your idea for the next Star Wars film</h1>
+<h1>Generate the storyline for a new Star Wars film</h1>
 
 <%= render "shared/errors" %>
+
+<% character_collection = CharactersService.call.sort %>
 
 <%= simple_form_for :plot, url: plots_path do |f| %>
   <div class="form-group">
@@ -25,7 +27,7 @@
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :hero,
-        collection: CharactersService.call,
+        collection: character_collection,
         prompt: t(".placholders.hero"),
         class: "form-control",
         id: "hero"
@@ -35,7 +37,7 @@
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :sidekick,
-        collection: CharactersService.call,
+        collection: character_collection,
         prompt: t(".placholders.sidekick"),
         class: "form-control",
         id: "sidekick"
@@ -45,7 +47,7 @@
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :victim,
-        collection: CharactersService.call,
+        collection: character_collection,
         prompt: t(".placholders.victim"),
         class: "form-control",
         id: "victim"
@@ -55,7 +57,7 @@
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :villain,
-        collection: CharactersService.call,
+        collection: character_collection,
         prompt: t(".placholders.villain"),
         class: "form-control",
         id: "villain"
