@@ -6,15 +6,31 @@
           <%= resource.title %>
         </h3>
       </div>
+
       <div class="panel-body">
         <%= resource.story %>
       </div>
     </div>
   <% end %>
 <% else %>
-  <%= button_to "Generate A New Storyline",
-    new_plot_path(),
-    class: "btn btn-default",
-    data: { disable_with: "Loading..." }
-  %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        No storylines have been generated
+      </h3>
+    </div>
+
+    <div class="panel-body">
+      Generate the storyline for a new Star Wars film
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= button_to "Generate A New Storyline",
+      new_plot_path(),
+      method: :get,
+      class: "btn btn-default",
+      data: { disable_with: "Loading..." }
+    %>
+  </div>
 <% end %>
