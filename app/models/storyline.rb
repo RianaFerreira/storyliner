@@ -1,5 +1,5 @@
-class Plot < ApplicationRecord
-  enum category: {
+class Storyline < ApplicationRecord
+  enum plot: {
     "Overcoming the Monster" => 0,
     "Rags to Riches" => 1,
     "The Quest" => 2,
@@ -9,5 +9,5 @@ class Plot < ApplicationRecord
     "Rebirth" => 6
   }
 
-  validates :title, :hero, :location, :category, presence: true
+  validates :title, :hero, :location, :plot, presence: true
 end

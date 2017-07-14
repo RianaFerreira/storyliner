@@ -34,10 +34,10 @@ en:
     failure: "That story could not be generated."
   notices:
     success: "Story succesfully generated."
-  plots:
+  storylines:
     new:
       placholders:
-        category: "Pick the plot"
+        plot: "Pick the plot category"
         hero: "Choose the hero"
         location: "Where should the story take place?"
         sidekick: "Who should be the sidekick?"

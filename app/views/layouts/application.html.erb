@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html data-turbolinks-native-message-handler="<%= ENV.fetch('TURBOLINKS_NATIVE_MESSAGE_HANDLER'.freeze) %>">
   <head>
     <title>Storyliner</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="initial-scale=1.0">
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"

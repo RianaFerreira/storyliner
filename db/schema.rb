@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170702012646) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "plots", force: :cascade do |t|
+  create_table "storylines", force: :cascade do |t|
     t.string "title"
     t.string "location"
     t.string "starship"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170702012646) do
     t.string "sidekick"
     t.string "victim"
     t.string "villain"
-    t.integer "category", default: 0
+    t.integer "plot", default: 0
     t.string "story"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

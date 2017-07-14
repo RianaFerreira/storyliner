@@ -1,6 +1,6 @@
-class CreatePlots < ActiveRecord::Migration[5.1]
+class CreateStorylines < ActiveRecord::Migration[5.1]
   def change
-    create_table :plots do |t|
+    create_table :storylines do |t|
       t.string :title
       t.string :location
       t.string :starship
@@ -9,7 +9,7 @@ class CreatePlots < ActiveRecord::Migration[5.1]
       t.string :sidekick
       t.string :victim
       t.string :villain
-      t.integer :category, default: 0
+      t.integer :plot, default: 0
       t.string :story
       t.timestamps
     end

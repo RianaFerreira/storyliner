@@ -56,18 +56,47 @@ gem "actionpack-action_caching"
 group :development, :test do
   # Call byebug anywhere in the code to stop execution and get a debugger console
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+
+  # Alternative to MiniTest
+  gem "rspec-rails"
+  gem "rspec-mocks"
+
+  # Alternative to fixtures
+  gem "factory_girl_rails"
+
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", "~> 2.13"
   gem "selenium-webdriver"
+
+  # Automated application auditing
+  gem "brakeman"
+  gem "rubycritic"
+  gem "traceroute"
+  gem "rubocop"
+  gem "rails_best_practices"
+  gem "simplecov"
+  gem "bullet"
+  gem "bundler-audit"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem "web-console", ">= 3.3.0"
+  # Notifications for file changes referenced by guard
+
   gem "listen", ">= 3.0.5", "< 3.2"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+end
+
+group :test do
+  # replace transactional fixtures
+  gem "database_cleaner"
+  # rspec simplified assertions
+  gem "shoulda-matchers", require: false
+  # generate test data
+  gem "faker"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -4,7 +4,7 @@
 
 <% character_collection = CharactersService.call.sort %>
 
-<%= simple_form_for :plot, url: plots_path do |f| %>
+<%= simple_form_for :storyline, url: storylines_path do |f| %>
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :title,
@@ -16,7 +16,7 @@
   <div class="form-group">
     <div class="col-md-6">
       <%= f.input :category,
-        collection: Plot.categories.keys.sort,
+        collection: Storyline.plots.keys.sort,
         prompt: t(".placholders.category"),
         class: "form-control",
         id: "category",
