@@ -11,10 +11,10 @@ class StorylinesController < ApplicationController
     @resource.story = StoryService.new(resource_params.to_h).call
 
     if @resource.save
-      flash[:notice] = t(:success)
+      flash[:success] = t(:success)
       redirect_to @resource
     else
-      flash[:errors] = t(:failure)
+      flash[:alert] = t(:failure)
       render :new
     end
   end

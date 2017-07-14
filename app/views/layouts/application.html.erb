@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width">
     <meta name="viewport" content="initial-scale=1.0">
-    
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -20,6 +20,7 @@
     <%= render "shared/nav" %>
 
      <div class="container">
+       <%= render "shared/flash_messages", flash: flash %>
        <%= yield %>
      </div>
   </body>

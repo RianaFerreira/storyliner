@@ -7,7 +7,7 @@ class StoryService
     @location = args[:location]
     @starship = args[:starship]
     @vehicle = args[:vehicle]
-    @plot = args[:category]
+    @plot = args[:plot]
   end
 
   def call

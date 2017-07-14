@@ -30,10 +30,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  errors:
-    failure: "That story could not be generated."
-  notices:
-    success: "Story succesfully generated."
+  failure: "That story could not be generated."
+  success: "Story succesfully generated."
+  plot: ""
+  
   storylines:
     new:
       placholders:
