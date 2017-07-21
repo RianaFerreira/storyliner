@@ -24,3 +24,6 @@
 
 # Env management
 .env
+
+# Test result output
+/coverage
